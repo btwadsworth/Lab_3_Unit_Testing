@@ -14,6 +14,12 @@ class TestCamelCase(TestCase):
         self.assertEqual(expected, actual)
 
 
+    def test_numbers(self):
+        expected = True
+        actual = camel_case.check_for_numbers('ABC DEF G 5H IJ K')
+        self.assertEqual(expected, actual)
+
+
 if __name__ == '__main__':
     import unittest
     unittest.main()

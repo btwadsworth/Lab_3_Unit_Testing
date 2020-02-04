@@ -7,7 +7,9 @@ def main():
         sentence = get_input()
         numbers = check_for_numbers(sentence)
         sentence = remove_special_chars(sentence)
-        if not numbers:
+        if numbers:
+            print('Do not enter any numbers.')
+        else:
             break
     
     sentence = camel_case(sentence)
@@ -26,7 +28,6 @@ def get_input():
 # Check for any numbers in the sentence
 def check_for_numbers(sentence):
     if any(char.isdigit() for char in sentence): # True if there is a number in the sentence
-        print('Do not enter any numbers.')
         return True
     else:
         return False

@@ -39,7 +39,13 @@ class TestStudentLists(TestCase):
 
 
     ## TODO write a test that adds some example students, then removes a student not in the list, and asserts a StudentError is raised
-
+    def test_remove_student_not_in_list(self):
+        test_class = ClassList(3)
+        test_class.add_student('Aaron')
+        test_class.add_student('Barry')
+        test_class.add_student('Charles')
+        with self.assertRaises(StudentError):
+            test_class.remove_student('Dan')
 
     ## TODO write a test that removes a student from an empty list, and asserts a StudentError is raised
 

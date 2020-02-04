@@ -6,8 +6,8 @@ def main():
     while True:
         sentence = get_input()
         numbers = check_for_numbers(sentence)
-        special = check_for_special_chars(sentence)
-        if not numbers and not special:
+        sentence = remove_special_chars(sentence)
+        if not numbers:
             break
     
     sentence = camel_case(sentence)
@@ -33,13 +33,12 @@ def check_for_numbers(sentence):
 
 
 # Check for any special characters in the sentence
-def check_for_special_chars(sentence):
-    invalid_chars = '@#$%^&*()_-+=[[}{;:"<>/`~|'
+def remove_special_chars(sentence):
+    invalid_chars = '@#$%^&*()_-+=[[}{;:"<>/`~|!?.,'
     for char in sentence:
         if char in invalid_chars:
-            print('Invalid character: %s' % char)
-            return True
-    return False
+            sentence = sentence.replace(char, '')
+    return sentence
 
 
 def display_banner():

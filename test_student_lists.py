@@ -55,7 +55,6 @@ class TestStudentLists(TestCase):
             test_class.remove_student('Test')
 
 
-
     def test_is_enrolled_when_student_present(self):
         test_class = ClassList(2)
         test_class.add_student('Snoop Dogg')
@@ -71,6 +70,11 @@ class TestStudentLists(TestCase):
 
     ## TODO write a test that adds some example students to a test class,
     ## then, call is_enrolled for a student who is not enrolled. use assertFalse to verify is_enrolled returns False.
+    def test_is_enrolled_when_student_not_present(self):
+        test_class = ClassList(3)
+        test_class.add_student('Alex')
+        test_class.add_student('Ben')
+        self.assertFalse(test_class.is_enrolled('Wayne'))
 
 
     def test_string_with_students_enrolled(self):

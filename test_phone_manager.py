@@ -33,9 +33,13 @@ class TestPhoneManager(unittest.TestCase):
 
 
     def test_create_and_add_new_employee(self):
-        # TODO write this test and then remove the self.fail() statement
+        # DONE write this test and then remove the self.fail() statement
         # Add some employees and verify they are present in the PhoneAssignments.employees list
-        self.fail()
+        testAssignmentMgr = PhoneAssignments()
+        testAssignmentMgr.add_employee('Sarah')
+        testAssignmentMgr.add_employee('Thomas')
+        self.assertIn('Sarah', testAssignmentMgr.employees)
+        self.assertIn('Thomas', testAssignmentMgr.employees)
 
 
     def test_create_and_add_employee_with_duplicate_id(self):
@@ -89,3 +93,8 @@ class TestPhoneManager(unittest.TestCase):
         # TODO check that the method raises an PhoneError if the employee does not exist
 
         self.fail()
+
+
+if __name__ == '__main__':
+    import unittest
+    unittest.main()

@@ -55,7 +55,7 @@ class PhoneAssignments():
     def add_phone(self, phone):
         # raise exception if two phones with same ID are added
         if phone in self.phones:
-            raise Exception
+            raise PhoneError
         else:
             self.phones.append(phone)
 

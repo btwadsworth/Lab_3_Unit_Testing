@@ -31,6 +31,11 @@ class TestStudentLists(TestCase):
 
 
     ## TODO write a test that adds and removes a student, and asserts the student is removed. Use assertNotIn
+    def test_remove_student(self):
+        test_class = ClassList(3)
+        test_class.add_student('Test Student')
+        test_class.remove_student('Test Student')
+        self.assertNotIn('Test Student', test_class.class_list)
 
 
     ## TODO write a test that adds some example students, then removes a student not in the list, and asserts a StudentError is raised
@@ -96,3 +101,7 @@ class TestStudentLists(TestCase):
 
     ## TODO write a test for your new is_class_full method for when is empty, and when it is not full. Use assertFalse.
     
+
+if __name__ == '__main__':
+    import unittest
+    unittest.main()

@@ -8,7 +8,7 @@ Practice using
  assertNotIn
 '''
 
-from studentlists import ClassList, StudentError
+from student_lists import ClassList, StudentError
 from unittest import TestCase
 
 class TestStudentLists(TestCase):
